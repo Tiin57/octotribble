@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 
-namespace TiinBot
+namespace Octotribble
 {
 	class PermRegistry
 	{
@@ -51,7 +51,7 @@ namespace TiinBot
 				string[] p = perm.Split('_');
 				if (p.Length == 2)
 				{
-					if (permissions[nick].Contains(p[1]) || permissions[nick].Contains(p[0] + "_*") || permissions[nick].Contains("*"))
+					if (permissions[nick].Contains(perm) || permissions[nick].Contains(p[0] + "_*") || permissions[nick].Contains("*"))
 					{
 						return true;
 					}
