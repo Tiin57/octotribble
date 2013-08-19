@@ -6,7 +6,7 @@ function chan(data)
 			irc:RfcPart(data.MessageArray[2])
 		end
 	elseif data.MessageArray.Length ~= 3 then
-		sendNotice(data.Nick, "Usage: botperm <add | remove> <nick> <perm>")
+		sendNotice(data.Nick, "Usage: channel <join | part> <channel>")
 	else
 		sendNotice(data.Nick, "You do not have the permissions required.")
 	end

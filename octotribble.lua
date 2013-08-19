@@ -12,6 +12,7 @@ function create_plugin(id, func, t)
 	if plugins[t]==nil then
 		plugins[t] = {}
 	end
+	if plugins[t][id] then return nil end
 	plugins[t][id]=func
 	print("Added plugin "..id)
 end
@@ -39,4 +40,8 @@ function evt_channel_message(sender, evt)
 		end
 	end
 end
-irc.OnChannelMessage:Add(evt_channel_message)
+channel_message_handler = irc.OnChannelMessage:Add(evt_channel_message)
+
+function reset()
+	irc.OnChannelMessage:Remove(channel_message_handler)
+end

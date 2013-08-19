@@ -1,5 +1,5 @@
-//css_reference lib/Meebey.SmartIrc4Net.dll
-//css_reference lib/LuaInterface.dll
+//css_reference Meebey.SmartIrc4Net.dll
+//css_reference LuaInterface.dll
 //css_import PermRegistry
 using System;
 using System.IO;
