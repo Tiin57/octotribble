@@ -31,10 +31,6 @@ namespace Octotribble
 		public static void AddPerm(string nick, string perm)
 		{
 			string file = "Permissions/" + nick + ".perm";
-			if (!File.Exists(file))
-			{
-				File.Create(file);
-			}
 			StreamWriter sw = new StreamWriter(file, true);
 			sw.WriteLine(perm);
 			sw.Close();
