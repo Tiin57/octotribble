@@ -1,0 +1,1 @@
+ function cycle(data) if PermRegistry.HasPerm(data.Nick, "chan_cycle") then irc:RfcPart(data.MessageArray[1], "Cycling") irc:RfcJoin(data.MessageArray[1]) end end cplugin("cycle", cycle, c_message)

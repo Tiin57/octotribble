@@ -71,7 +71,11 @@ namespace Octotribble
 		{
 			irc.SendMessage(SendType.Message, target, message);
 		}
-
+		
+		public static void SendAction(string target, string action)
+		{
+			irc.SendMessage(SendType.Action, target, action);
+		}
 		public static void SendNotice(string target, string message)
 		{
 			irc.SendMessage(SendType.Notice, target, message);
