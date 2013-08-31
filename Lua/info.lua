@@ -1,0 +1,1 @@
+ function info(data) print('I am Octotribble, a bot created by tiin57. I am open-source, available at https://github.com/tiin57/octotribble') end cplugin('info', info, c_message)

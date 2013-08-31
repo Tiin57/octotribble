@@ -1,0 +1,1 @@
+ function punch(data) if PermRegistry.HasPerm(data.Nick, "action_punch") then sendAction(data.Channel, "punches "..data.MessageArray[1]) end end cplugin("punch", punch, c_message)

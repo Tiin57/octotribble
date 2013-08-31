@@ -1,6 +1,5 @@
 //css_reference Meebey.SmartIrc4Net.dll
 //css_reference LuaInterface.dll
-//css_import PermRegistry
 using System;
 using System.IO;
 using System.Linq;
@@ -146,8 +145,6 @@ namespace Octotribble
 			irc.SendDelay = 10;
 
 			InitializeConfig();
-			PermRegistry.Init();
-			LoadLuaScripts();
 			irc.ActiveChannelSyncing = true;
 			
 			string[] serverlist = new string[] { properties["server"] };
@@ -175,6 +172,8 @@ namespace Octotribble
 
 				irc.SendMessage(SendType.Message, "NickServ", "identify "+properties["nickserv"]);
 
+				irc.ReadLine(false);
+				LoadLuaScripts();
 				irc.Listen();
 
 				irc.Disconnect();
